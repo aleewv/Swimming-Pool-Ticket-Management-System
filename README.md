@@ -23,20 +23,23 @@ The goal of Progress 1 is to set up the public repository, document the project 
 
 | Name | Student ID | GitHub | Progress 1 Task | Main Pull Request |
 | --- | --- | --- | --- | --- |
-| M. Ridho Alfaridzi Nasution (Team Leader) | 263140700111027 | @dhoengineer | Write the README with the project proposal, team details, and task division. | [PR link] |
+| M. Ridho Alfaridzi Nasution (Team Leader) | 263140700111027 | [@dhoengineer](https://github.com/dhoengineer) | Write the README with the project proposal, team details, and task division. | [PR link] |
 | Ossamah Ale Ibaraja | 263140707111047 | [@aleewv](https://github.com/aleewv) | Create the public repository and add the Hello console program in src/index.ts. Proposed: set up package.json and tsconfig.json, and check that .gitignore excludes node_modules/. | [PR link] |
-| Melinda Sri Cahyani Situmorang  |263140700111004 | @gargantua-rus | Add the initial Project Report to the docs/ folder. | [PR link] |
+| Melinda Sri Cahyani Situmorang  |263140700111004 | [@gargantua-rus](https://github.com/gargantua-rus) | Add the initial Project Report to the docs/ folder. | [PR link] |
 
 ## How to Run
 
 After the TypeScript setup is in place, open a terminal in the project folder and run:
 
-bash
+Open a terminal in the project folder and run:
+
+```bash
 npm install
 npx ts-node src/index.ts
-
+```
 
 Expected output:
 
-text
+```text
 Hello console
+```
