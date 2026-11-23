@@ -1,0 +1,26 @@
+{
+  "name": "swimming-pool-ticket-management-system",
+  "version": "1.0.0",
+  "description": "A TypeScript console app for calculating swimming pool ticket prices and managing ticket sales. Built by Group 01 (T1A) for the Fundamentals of Programming final exam.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aleewv/Swimming-Pool-Ticket-Management-System.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/aleewv/Swimming-Pool-Ticket-Management-System/issues"
+  },
+  "homepage": "https://github.com/aleewv/Swimming-Pool-Ticket-Management-System#readme",
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.9.3"
+  }
+}
