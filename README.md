@@ -44,10 +44,10 @@ The application will provide the following features:
 
 ### 6. Initial Data Entities
 
-| Entity | Properties |
-|---|---|
-| Ticket | ticketId, ticketType, price |
-| Customer | customerId, customerName |
+| Entity      | Properties                                                |
+| ----------- | --------------------------------------------------------- |
+| Ticket      | ticketId, ticketType, price                               |
+| Customer    | customerId, customerName                                  |
 | Transaction | transactionId, ticketId, customerId, quantity, totalPrice |
 
 ### 7. Expected Output
@@ -56,11 +56,11 @@ The application is expected to provide organized swimming pool ticket transactio
 
 ## Planned Features
 
-- *Create* — Calculate the ticket price and save the sale with a unique ID.
-- *Read* — Show all sales or find one by transaction ID.
-- *Update* — Edit a sale and recalculate the price when needed.
-- *Delete* — Remove a sale after confirmation.
-- *Search* — Find sales by buyer name and filter by day type.
+- _Create_ — Calculate the ticket price and save the sale with a unique ID.
+- _Read_ — Show all sales or find one by transaction ID.
+- _Update_ — Edit a sale and recalculate the price when needed.
+- _Delete_ — Remove a sale after confirmation.
+- _Search_ — Find sales by buyer name and filter by day type.
 
 ## Progress 1
 
@@ -68,11 +68,11 @@ The goal of Progress 1 is to set up the public repository, document the project 
 
 ## Team Members and Task Division
 
-| Name | Student ID | GitHub | Progress 1 Task | Main Pull Request |
-| --- | --- | --- | --- | --- |
-| M. Ridho Alfaridzi Nasution (Team Leader) | 263140700111027 | [@dhoengineer](https://github.com/dhoengineer) | Write the README with the project proposal, team details, and task division. | [PR link] |
-| Ossamah Ale Ibaraja | 263140707111047 | [@aleewv](https://github.com/aleewv) | Create the public repository and add the Hello console program in src/index.ts. Proposed: set up package.json and tsconfig.json, and check that .gitignore excludes node_modules/. | [PR link] |
-| Melinda Sri Cahyani Situmorang  |263140700111004 | [@gargantua-rus](https://github.com/gargantua-rus) | Add the initial Project Report to the docs/ folder. | [PR link] |
+| Name                                      | Student ID      | GitHub                                             | Progress 1 Task                                                                                                                                                                    | Main Pull Request                                                                                |
+| ----------------------------------------- | --------------- | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| M. Ridho Alfaridzi Nasution (Team Leader) | 263140700111027 | [@dhoengineer](https://github.com/dhoengineer)     | Write the README with the project proposal, team details, and task division.                                                                                                       | [PR #4](https://github.com/aleewv/Swimming-Pool-Ticket-Management-System/pull/4)                 |
+| Ossamah Ale Ibaraja                       | 263140707111047 | [@aleewv](https://github.com/aleewv)               | Create the public repository and add the Hello console program in src/index.ts. Proposed: set up package.json and tsconfig.json, and check that .gitignore excludes node_modules/. | [PR #1](https://github.com/aleewv/Swimming-Pool-Ticket-Management-System/pull/1)                 |
+| Melinda Sri Cahyani Situmorang            | 263140700111004 | [@gargantua-rus](https://github.com/gargantua-rus) | Add the initial Project Report to the docs/ folder.                                                                                                                                | [Direct commit](https://github.com/aleewv/Swimming-Pool-Ticket-Management-System/commit/ac4aabe) |
 
 ## How to Run
 
