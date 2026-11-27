@@ -99,6 +99,7 @@ function applyCategoryAdjustment(
 }
 
 // Fungsi 4: Menghitung diskon member jika memenuhi syarat
+//disempurnakan oleh M. Ridho Alfaridzi Nasution
 function calculateMemberDiscount(price: number, isMember: boolean): number {
   if (isMember && price >= 30000) {
     return price * MEMBER_DISCOUNT;
@@ -233,6 +234,7 @@ function showMainMenu(): void {
 }
 
 // Fungsi 10: Mengulang menu utama sampai pengguna memilih Exit
+// disempurnakan oleh M. Ridho Alfaridzi Nasution
 function main(): void {
   let menuChoice: string = "";
 
