@@ -101,8 +101,8 @@ From the project root:
 
 ```bash
 npm install
-npx tsc --noEmit
-npx ts-node src/index.ts
+npx tsc
+node dist/index.js
 ```
 
 To compile and run the JavaScript output instead:
