@@ -1,92 +1,145 @@
 # Swimming Pool Ticket Management System
 
-Fundamentals of Programming Final Exam  
-T1A Group 01 · Universitas Brawijaya
+Fundamentals of Programming Final Examination  
+T1A — Group 01 | D3 Information Technology, Universitas Brawijaya
 
-## Project Proposal
+## Project Overview
 
-## Project Proposal
+Swimming Pool Ticket Management System is a TypeScript console application developed as a team project. It is intended to help swimming pool ticket officers calculate prices and, in later progress stages, organize ticket sales records using Create, Read, Update, Delete, and Search features.
 
-### 1. Project Overview
+## Problem Description
 
-Swimming Pool Ticket Management System is a TypeScript-based console application designed to manage swimming pool ticket sales and calculate ticket prices. This application is developed as a team project for the Fundamentals of Programming Final Examination at Universitas Brawijaya.
+Manual swimming pool ticket sales can lead to mistakes in calculating prices and recording transactions. The planned system helps staff select the day, visitor category, and membership status, then calculate the correct payment. Future progress stages will add transaction storage and management.
 
-### 2. Problem Description
+## System Users
 
-Swimming pool ticket sales require accurate transaction recording and ticket price calculations. Manual recording can cause errors in calculating prices and managing customer transactions. Therefore, this project aims to develop a simple console-based application to make ticket sales management more organized, accurate, and efficient.
+- **Administrator:** Manages ticket records and monitors sales data (planned).
+- **Ticket Officer:** Calculates ticket prices and records customer purchases (record management planned).
 
-### 3. System Users
+## Project Objectives
 
-The system is designed for the following users:
+1. Simplify swimming pool ticket price calculations.
+2. Calculate ticket prices based on the selected day and visitor category.
+3. Apply member discounts consistently.
+4. Develop CRUD and Search functions for transaction records in the following progress stages.
+5. Build a console application using the programming concepts required in the final examination.
 
-- **Administrator:** Manages ticket transaction records and monitors sales data.
-- **Ticket Officer:** Records customer ticket purchases and checks transaction information.
+## Planned System Features
 
-### 4. Project Objectives
+| Feature | Intended behavior | Progress 2 status |
+| --- | --- | --- |
+| Create | Add a record with a unique ID | Placeholder; planned for Progress 3 |
+| Read | Display all records and view details by ID | Placeholder; planned for Progress 4 |
+| Update | Edit an existing record | Placeholder; planned for Progress 5 |
+| Delete | Remove a record after confirmation | Placeholder; planned for Progress 5 |
+| Search | Search records and apply an additional filter | Placeholder; planned for Progress 6 |
+| Calculate Ticket Price | Calculate the amount due with category adjustments and discounts | **Implemented** |
+| Exit | Stop the menu loop | **Implemented** |
 
-The objectives of this project are:
+## Data Entities
 
-1. To simplify swimming pool ticket sales management.
-2. To calculate ticket prices based on ticket type and quantity.
-3. To store and manage transaction records.
-4. To provide CRUD (Create, Read, Update, Delete) and Search operations.
-5. To improve the accuracy and efficiency of ticket transaction management.
+The current `src/index.ts` defines three arrays to hold future records. These arrays are empty at Progress 2; running the calculator does **not** save a transaction.
 
-### 5. Planned System Features
+| Entity | Properties defined in code |
+| --- | --- |
+| `Ticket` | `ticketId`, `ticketType`, `price`, `isActive` |
+| `Customer` | `customerId`, `customerName` |
+| `Transaction` | `transactionId`, `ticketId`, `customerId`, `quantity`, `totalPrice` |
 
-The application will provide the following features:
+A separate `TicketCalculation` interface holds member status, day/category selections, price, discount, and total payment for one calculation. The entity and workflow design may be refined as CRUD is implemented; related documentation should be updated consistently.
 
-1. **Create:** Add new swimming pool ticket transaction records.
-2. **Read:** Display all transaction records and view transaction details by ID.
-3. **Update:** Modify existing transaction information.
-4. **Delete:** Remove transaction records with confirmation.
-5. **Search:** Search transaction records using keywords and additional filters.
+## Pricing Rules (Current Calculator)
 
-### 6. Initial Data Entities
+| Selection | Price or adjustment |
+| --- | ---: |
+| Weekday | Rp20,000 |
+| Weekend | Rp30,000 |
+| Holiday | Rp40,000 |
+| Child | −Rp5,000 |
+| Student | −Rp3,000 |
+| Adult | No reduction |
+| Member discount | 10% only if adjusted price is at least Rp30,000 |
 
-| Entity      | Properties                                                |
-| ----------- | --------------------------------------------------------- |
-| Ticket      | ticketId, ticketType, price                               |
-| Customer    | customerId, customerName                                  |
-| Transaction | transactionId, ticketId, customerId, quantity, totalPrice |
+Membership accepts `yes` or `no`. Day and category choices accept `1`, `2`, or `3`.
 
-### 7. Expected Output
+## Team Members and Progress 1 Contributions
 
-The application is expected to provide organized swimming pool ticket transaction records, accurate ticket price calculations, and easy access to transaction information through a console-based interface.
+| Name | Student ID (NIM) | GitHub | Verified Progress 1 contribution |
+| --- | --- | --- | --- |
+| M. Ridho Alfaridzi Nasution (Team Leader) | 263140700111027 | [@dhoengineer](https://github.com/dhoengineer) | Project proposal and team responsibilities — [PR #4](https://github.com/aleewv/Swimming-Pool-Ticket-Management-System/pull/4) |
+| Ossamah Ale Ibaraja | 263140707111047 | [@aleewv](https://github.com/aleewv) | Repository setup, initial TypeScript application, and report organization — [PR #1](https://github.com/aleewv/Swimming-Pool-Ticket-Management-System/pull/1), [PR #2](https://github.com/aleewv/Swimming-Pool-Ticket-Management-System/pull/2), [PR #6](https://github.com/aleewv/Swimming-Pool-Ticket-Management-System/pull/6) |
+| Melinda Sri Cahyani Situmorang | 263140700111004 | [@gargantua-rus](https://github.com/gargantua-rus) | Initial reports uploaded — [Project Report commit](https://github.com/aleewv/Swimming-Pool-Ticket-Management-System/commit/ac4aabe), [Progress Report commit](https://github.com/aleewv/Swimming-Pool-Ticket-Management-System/commit/6f18569) |
 
-## Planned Features
+The Progress 1 milestone initially used a `Hello console` entry point. That entry point has since been replaced by the Progress 2 main menu.
 
-- _Create_ — Calculate the ticket price and save the sale with a unique ID.
-- _Read_ — Show all sales or find one by transaction ID.
-- _Update_ — Edit a sale and recalculate the price when needed.
-- _Delete_ — Remove a sale after confirmation.
-- _Search_ — Find sales by buyer name and filter by day type.
+## Progress 2 — Main Menu and Ticket Calculator
 
-## Progress 1
+**Deadline:** Friday, 27 November 2026, 23:59 WIB.
 
-The goal of Progress 1 is to set up the public repository, document the project proposal and team responsibilities, and run a basic TypeScript program that prints Hello console.
+The main application lives in [`src/index.ts`](src/index.ts). Progress 2 introduces:
 
-## Team Members and Task Division
+- A repeating main menu using `while` and `switch`, with options 1–7 and Exit (`0`).
+- A message for invalid menu choices and a pause before returning to the menu.
+- Typed interfaces, arrays for planned data storage, and ten typed functions.
+- A working ticket price calculator based on the existing UTS logic.
+- Input validation for membership, day, and visitor category.
+- Explanatory comments in Indonesian as required by the lecturer.
 
-| Name                                      | Student ID      | GitHub                                             | Progress 1 Task                                                                                                                                                                    | Main Pull Request                                                                                |
-| ----------------------------------------- | --------------- | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| M. Ridho Alfaridzi Nasution (Team Leader) | 263140700111027 | [@dhoengineer](https://github.com/dhoengineer)     | Write the README with the project proposal, team details, and task division.                                                                                                       | [PR #4](https://github.com/aleewv/Swimming-Pool-Ticket-Management-System/pull/4)                 |
-| Ossamah Ale Ibaraja                       | 263140707111047 | [@aleewv](https://github.com/aleewv)               | Create the public repository and add the Hello console program in src/index.ts. Proposed: set up package.json and tsconfig.json, and check that .gitignore excludes node_modules/. | [PR #1](https://github.com/aleewv/Swimming-Pool-Ticket-Management-System/pull/1)                 |
-| Melinda Sri Cahyani Situmorang            | 263140700111004 | [@gargantua-rus](https://github.com/gargantua-rus) | Add the initial Project Report to the docs/ folder.                                                                                                                                | [Direct commit](https://github.com/aleewv/Swimming-Pool-Ticket-Management-System/commit/ac4aabe) |
+**Important:** CRUD and Search options currently display a placeholder message. They are not yet implemented, and no transaction records are saved.
 
-## How to Run
+### Progress 2 GitHub Evidence
 
-After the TypeScript setup is in place, open a terminal in the project folder and run:
+- [PR #7 — Main menu and calculator](https://github.com/aleewv/Swimming-Pool-Ticket-Management-System/pull/7)
+- [PR #8 — Synchronize existing Progress 1 content into develop](https://github.com/aleewv/Swimming-Pool-Ticket-Management-System/pull/8)
+- [PR #9 — Integrate Progress 2 into main](https://github.com/aleewv/Swimming-Pool-Ticket-Management-System/pull/9)
 
-Open a terminal in the project folder and run:
+The official report, flowchart, and test screenshot are maintained in the `docs/` folder. Their final contents should be checked by the team before submission.
+
+## How to Install and Run
+
+From the project root:
 
 ```bash
 npm install
-npx ts-node src/index.ts
+npx tsc
+node dist/index.js
 ```
 
-Expected output:
+To compile and run the JavaScript output instead:
+
+```bash
+npx tsc
+node dist/index.js
+```
+
+The application displays a menu headed:
 
 ```text
-Hello console
+=== SWIMMING POOL TICKET MANAGEMENT ===
+1. Create Ticket
+2. View All Tickets
+3. View Ticket by ID
+4. Update Ticket
+5. Delete Ticket
+6. Search Ticket
+7. Calculate Ticket Price
+0. Exit
 ```
+
+## Manual Testing — Progress 2
+
+Enter each response separately at the corresponding terminal prompt.
+
+| Test | Input sequence | Expected result |
+| --- | --- | --- |
+| Invalid menu input | `9` | Invalid menu message, then Enter prompt |
+| Future feature placeholder | `1` | Create Ticket is planned for a later progress |
+| Member calculator | `7`, `yes`, `3`, `3` | Price Rp40,000; discount Rp4,000; total Rp36,000 |
+| Nonmember calculator | `7`, `no`, `1`, `1` | Price Rp15,000; discount Rp0; total Rp15,000 |
+| Exit | `0` | Goodbye message and program ends |
+
+The main menu returns after each action other than Exit.
+
+## Next Steps
+
+Progress 3: Create and input validation. Progress 4: Read all/by ID. Progress 5: Update and Delete. Progress 6: Search and completion of required loops and array operations. Progress 7: Final report, GitHub evidence, and demonstration readiness.
